@@ -1,0 +1,29 @@
+﻿{
+	"books": [
+		{
+			"Title": "Slaughterhouse-Five",
+			"Author": "Kurt Vonnegut",
+			"Published": 1969
+		},
+		{
+			"Title": "Siddhartha",
+			"Author": "Hermann Hesse",
+			"Published": 1922
+		},
+		{
+			"Title": "On Published Road",
+			"Author": "Jack Kerouac",
+			"Published": 1957
+		},
+		{
+			"Title": " Catcher in the Rye",
+			"Author": "Jerome David Salinger",
+			"Published": 1951
+		},
+		{
+			"Title": "The Master and Margarita",
+			"Author": "Mikhail Bulgakov",
+			"Published": 1967
+		}
+	]
+}
