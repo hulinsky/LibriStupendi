@@ -22,12 +22,12 @@ namespace LibriStupendi
             this.books.Add(book);
         }
 
-        public void DelBook(Guid id)
+        public void RemoveBook(Guid id)
         {
             this.books.Remove(this.books.Find(Id => Id.Equals(id)));
         }
 
-        public void ShowBooks()
+        public void ShowAllBooks()
         {
             foreach (Book book in books)
             {

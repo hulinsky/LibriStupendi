@@ -10,21 +10,25 @@ namespace LibriStupendi
     class Book
     {
         [JsonProperty("Title")]
-        public string Title { get; set; }
+        public string Title { get; }
 
         [JsonProperty("Author")]
-        public string Author { get; set; }
+        public string Author { get; }
 
         [JsonProperty("Published")]
-        public int Published { get; set; }
+        public int Published { get; }
 
         // public string Genre { get; set; }
         // public string ISBN { get; set; }
-        // private Guid id;
 
-        public Book()
+        public Guid id { get; }
+
+        public Book(string title, string author, int published)
         {
-            //id = Guid.NewGuid();
+            id = Guid.NewGuid();
+            Title = title;
+            Author = author;
+            Published = published;
         }
 
         public override string ToString()

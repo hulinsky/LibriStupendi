@@ -10,33 +10,25 @@ namespace LibriStupendi
 {
     class Program
     {
-        public const string SAMPLE_FILENAME = "sample-books.json";
 
         static void Main(string[] args)
         {
-            Console.WriteLine("--- Libri Stupendi ---");
 
-            ListOfBooks myBooks = new ListOfBooks();
+        BookList myBookList = new BookList();
+            Librarian myLibrarian = new Librarian(myBookList);
 
-            using (StreamReader sr = new StreamReader(@SAMPLE_FILENAME))
-            {
-                string json = sr.ReadToEnd();
-                myBooks = JsonConvert.DeserializeObject<ListOfBooks>(json);
-            }
+            Menu myMenu = new Menu("--- Libri Stupendi ---");
+            myMenu.AddMenuItem(new MenuItem("Add a new book", myLibrarian.NewBook));
+            myMenu.AddMenuItem(new MenuItem("Remove a book", myLibrarian.RemoveBook));
+            myMenu.AddMenuItem(new MenuItem("Show all books", myLibrarian.ShowAllBooks));
+            myMenu.ShowMenu();
 
-            string jsonListOutput = myBooks.ToJson();
-            Console.WriteLine(jsonListOutput);
-            ListOfBooks deserializeBooks = JsonConvert.DeserializeObject<ListOfBooks>(jsonListOutput);
-            //deserializeBooks.PrintList();
-            JsonSerializer serializer = new JsonSerializer();
-            using (StreamWriter sw = new StreamWriter("save.json"))
-            {
-                using (JsonWriter writer = new JsonTextWriter(sw))
-                {
-                    serializer.Serialize(writer, myBooks);
-                }
-            }
+            myLibrarian.ReadBookList();
+            myLibrarian.ShowAllBooks();
 
+
+
+    
             Console.ReadKey();
 
         }
