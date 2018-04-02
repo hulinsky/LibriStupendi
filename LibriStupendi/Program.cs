@@ -26,8 +26,9 @@ namespace LibriStupendi
             myMenu.AddMenuItem(new MenuItem("Save list of books", myLibrarian.SaveBookList));
             myMenu.AddMenuItem(new MenuItem("Exit", myLibrarian.Exit, true));
             myMenu.ShowMenu();
-            myMenu.menu[3].ItemHandler.Invoke();
-            myMenu.menu[2].ItemHandler.Invoke();
+
+            myMenu.MenuItems[3].Handler.Invoke();
+            myMenu.MenuItems[2].Handler.Invoke();
 
             Console.ReadKey();
 

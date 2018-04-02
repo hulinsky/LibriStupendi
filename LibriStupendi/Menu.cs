@@ -9,18 +9,18 @@ namespace LibriStupendi
 
     public class Menu
     {
-        public List<MenuItem> menu;
+        public List<MenuItem> MenuItems;
         private string Title;
 
         public Menu(string title)
         {
             this.Title = title;
-            this.menu = new List<MenuItem>();
+            this.MenuItems = new List<MenuItem>();
         }
 
         public void AddMenuItem(MenuItem menuItem)
         {
-            this.menu.Add(menuItem);
+            this.MenuItems.Add(menuItem);
         }
 
         public void ShowMenu()
@@ -28,9 +28,9 @@ namespace LibriStupendi
             Console.Clear();
             Console.WriteLine(this.Title);
             int itemCount = 1;
-            foreach (var item in this.menu)
+            foreach (var item in this.MenuItems)
             {
-                Console.WriteLine($"{itemCount++}. {item.ItemDescription}");
+                Console.WriteLine($"{itemCount++}. {item.Description}");
             }
 
         }

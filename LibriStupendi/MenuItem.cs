@@ -8,16 +8,16 @@ namespace LibriStupendi
 {
     public class MenuItem
     {
-        public string ItemDescription { get; }
-        public Action ItemHandler { get; }
-        public bool ItemExitOption { get; }
+        public string Description { get; }
+        public Action Handler { get; }
+        public bool ExitOption { get; }
 
-        public MenuItem(string itemDescription, Action itemHandler, bool itemExitOption = false)
+        public MenuItem(string description, Action handler, bool exitOption = false)
         {
             // maybe better with this.
-            ItemDescription = itemDescription;
-            ItemHandler = itemHandler;
-            ItemExitOption = itemExitOption;
+            this.Description = description;
+            this.Handler = handler;
+            this.ExitOption = exitOption;
         }
     }
 
