@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="BookList.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Librarian.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />
@@ -57,10 +56,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="book-json-schema.json" />
-    <None Include="json-schema1.json" />
-    <None Include="json1.json" />
-    <None Include="json2.json" />
-    <None Include="json3.json" />
     <None Include="packages.config" />
     <None Include="sample-books.json" />
   </ItemGroup>

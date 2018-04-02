@@ -16,7 +16,7 @@ namespace LibriStupendi
         {
             // maybe better with this.
             ItemDescription = itemDescription;
-            ItemHandler = ItemHandler;
+            ItemHandler = itemHandler;
             ItemExitOption = itemExitOption;
         }
     }

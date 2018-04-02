@@ -10,15 +10,14 @@ namespace LibriStupendi
 {
     class Librarian
     {
-        public const string SAMPLE_FILENAME = "sample-books.json";
-        public const string USER_FILENAME = "mybooks.json";
+        private const string SAMPLE_FILENAME = "sample-books.json";
+        private const string USER_FILENAME = "mybooks.json";
 
-        BookList books;
+        private BookList books;
 
-        public Librarian(BookList books)
-        {
-            this.books = books;
-        }
+        public bool IsExit { get => IsExit; set => IsExit = value; }
+
+        public Librarian(BookList books) => this.books = books;
 
         public void NewBook()
         {
@@ -41,6 +40,7 @@ namespace LibriStupendi
             using (StreamReader sr = new StreamReader(@filename))
             {
                 string json = sr.ReadToEnd();
+                Console.WriteLine(json.ToString());
                 this.books = JsonConvert.DeserializeObject<BookList>(json);
             }
         }
@@ -57,9 +57,9 @@ namespace LibriStupendi
             }
         }
 
-        public void ReadBookList()
+        public void LoadBookList()
         {
-            _loadBookList(SAMPLE_FILENAME);
+            _loadBookList(USER_FILENAME);
         }
 
         public void SaveBookList()
@@ -67,5 +67,14 @@ namespace LibriStupendi
             _writeBookList(USER_FILENAME);
         }
 
+        public void LoadSamples()
+        {
+            _loadBookList(SAMPLE_FILENAME);
+        }
+
+        public void Exit()
+        {
+            this.IsExit = true;
+        }
     }
 }
